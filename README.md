@@ -1,14 +1,14 @@
 ## RUCQA - Based on LlamaIndex & LangChain 
 
-### 1.Document_Crawler
+### 1.Document Crawler
 
-4533 docs in total, which are crawled based on the requirement. Website: [RUC NEWS](https://news.ruc.edu.cn/)
+A total of 4,533 documents have been crawled based on the requirements from the website: [RUC NEWS](https://news.ruc.edu.cn/)
 
 ### 2.Overall Structure
 
-![ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00](img-folder/ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00.png)
+![Overall Structure](https://github.com/RanchiZhao/RUCQA/raw/master/img-folder/Overall_Structure.png)
 
-### 3.VRM(Vector store index based Retrieval Module) - Powed by Llama Index
+### 3.VRM(Vector store index based Retrieval Module) - Powered by Llama Index
 
 #### 3.1 Load in Documents
 

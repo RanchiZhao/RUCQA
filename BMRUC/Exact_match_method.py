@@ -38,18 +38,17 @@ class QueryKeyWordsExtractor:
 
     def find_most_common_doc(self, query_str):
         actual_list = self.extract_keywords(query_str)
-        matching_documents = [[doc for doc in self.documents if query in doc] for query in actual_list]
-
+        matching_documents = [[doc for doc in self.documents if query in doc[1]] for query in actual_list]
         # 将所有列表合并为一个列表
         all_matches = [match for sublist in matching_documents for match in sublist]
-
         # 找出出现次数最多的文档
         counter = Counter(all_matches)
 
         max_count = counter.most_common(1)[0][1]  # 最高得分
-        most_common_docs = [doc for doc, count in counter.items() if count == max_count]  # 所有得分最高的文档
+        most_common_docs_name = [doc[0] for doc, count in counter.items() if count == max_count]
+        most_common_docs_content = [doc[1] for doc, count in counter.items() if count == max_count]  # 所有得分最高的文档
 
-        return most_common_docs
+        return most_common_docs_name, most_common_docs_content
 
 class KeywordDocumentSearch:
     def __init__(self, most_common_docs, query_list, chunk_size=200, overlap_size=50):
@@ -156,7 +155,7 @@ if __name__ == '__main__':
     extractor = QueryKeyWordsExtractor('./docs')
     query_str = '信息学院教授王珊、杜小勇获中国计算机学会（CCF）创建60周年什么奖'
     query_list = extractor.extract_keywords(query_str)
-    most_common_docs = extractor.find_most_common_doc(query_str)
+    most_common_docs_name, most_common_docs = extractor.find_most_common_doc(query_str)
     print("most_common_docs:",most_common_docs)
 
     Search = KeywordDocumentSearch(most_common_docs, query_list)

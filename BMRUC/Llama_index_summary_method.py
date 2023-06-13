@@ -4,8 +4,8 @@ from llama_index import SimpleDirectoryReader, LLMPredictor, ServiceContext, Res
 from llama_index.retrievers import VectorIndexRetriever
 from llama_index.query_engine import RetrieverQueryEngine
 from langchain.chat_models import ChatOpenAI
-
-class Llama_Index_Processor:
+import os
+class Llama_Index_Summary_Processor:
     #text-davinci-003
     def __init__(self, document_directory='./docs', model_name="text-davinci-003", storage_directory='./storage'):
 
@@ -34,3 +34,10 @@ class Llama_Index_Processor:
         response = self.query_engine.query(query_str)
         return response
 
+if __name__ == '__main__':
+    os.environ["OPENAI_API_KEY"] = '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'
+    query = '怎样推动网络空间安全高效治理？'
+    processor = Llama_Index_Summary_Processor()
+    response = processor.process_query(query)
+    print("question: ", query)
+    print("response: ", response)

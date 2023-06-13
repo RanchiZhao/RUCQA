@@ -17,10 +17,11 @@ def evaluate(queries: list):
     extractor = QueryKeyWordsExtractor('./docs')
     for query in queries:
         response = processor.process_query(query)
-        print("response:", response)
+        print("question: ", query)
+        print("response: ", response)
 
         query_list = extractor.extract_keywords(query)
-        most_common_docs = extractor.find_most_common_doc(query)
+        most_common_docs_name, most_common_docs = extractor.find_most_common_doc(query)
         Search = KeywordDocumentSearch(most_common_docs, query_list)
         answer_sent = Search.search(query)
         print("answer_sent:", answer_sent)
@@ -32,7 +33,12 @@ def evaluate(queries: list):
         ai = AnswerIntegrator(final_answer, response)
         integrated_answer = ai.integrate_answers(query)
         simplified_answer = ai.simplify_answers(query, integrated_answer).rstrip("。")
-        print(integrated_answer)
-        print(simplified_answer)
+        print("integrated_answer: ", integrated_answer)
+        print("simplified_answer: ", simplified_answer)
         return_list.append(simplified_answer)
+
+        reference_list = ["news.ruc.edu.cn/archives/" + name for name in most_common_docs_name[:5]]
+        print("reference_list: ", reference_list)
+
+
     return return_list  # EM 0.8

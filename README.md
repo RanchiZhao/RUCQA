@@ -6,7 +6,7 @@ A total of 4,533 documents have been crawled based on the requirements from the 
 
 ### 2.Overall Structure
 
-![Overall Structure](https://github.com/RanchiZhao/RUCQA/raw/master/img-folder/Overall_Structure.png)
+![Overall Structure](https://github.com/RanchiZhao/RUCQA/raw/main/img-folder/Overall_Structure.png)
 
 ### 3.VRM(Vector store index based Retrieval Module) - Powered by Llama Index
 

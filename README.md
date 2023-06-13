@@ -6,7 +6,7 @@
 
 ### 2.Overall Structure
 
-![ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00](./ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00.png)
+![ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00](img-folder/ML Visuhttps___docs.google.com_presentation_u_0__authuser=0&usp=slides_webals_00.png)
 
 ### 3.VRM(Vector store index based Retrieval Module) - Powed by Llama Index
 

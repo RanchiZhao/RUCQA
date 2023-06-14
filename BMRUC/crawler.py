@@ -34,8 +34,6 @@ def get_news_links(url):
     news_links = [link['href'] for link in links if link['href'].startswith('https://news.ruc.edu.cn/archives/')]
     return news_links
 
-
-
 def main():
     base_url = 'https://news.ruc.edu.cn/archives/date/2023/'
     for month in range(1, 6):

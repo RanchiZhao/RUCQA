@@ -3,13 +3,8 @@ import requests
 import getpass
 from urllib.parse import urljoin
 
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-
 # Your QA Function
-from RUCQA.api.ruc_qa import evaluate
+from api.ruc_qa import evaluate
 
 
 # 提交地址

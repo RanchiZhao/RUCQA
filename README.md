@@ -143,17 +143,9 @@ Given the relatively straightforward nature of the provided questions, we requir
 
 Our pipeline for this process includes:
 
-**<1> Extract keywords from the query & Discriminate the classification of query**
 
-**<2> Search for the most related chunks based on these keywords**
 
-**<3> Find the sentence related to the answer (just locate, do not answer) within these chunks (which serve as reference materials here)**
 
-**<4> Determine the answer based on the answer-related sentence**
-
-**<5> Integrate the answer from this process with the answer from VRM into a single response**
-
-**<6> Simplify the integrated answer into the required format**
 
 As evident, we break the whole process down into manageable tasks. For each segment, we delegate these specific subdivisions of tasks to the LLM via LangChain (except for step <2>).
 

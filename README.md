@@ -143,16 +143,25 @@ Given the relatively straightforward nature of the provided questions, we requir
 
 Our pipeline for this process includes:
 
+**<0> Determine the classification of the query**
 
+**<1> Extract keywords from the query**
 
+**<2> Search for the most related chunks based on these keywords**
 
+**<3> Find the sentence related to the answer within these chunks (which serve as reference materials here)**
+
+**<4> Determine the answer based on the answer-related sentence**
+
+**<5> Integrate the answer from this process with the answer from VRM into a single response**
+
+**<6> Simplify the integrated answer into the required format**
 
 As evident, we break the whole process down into manageable tasks. For each segment, we delegate these specific subdivisions of tasks to the LLM via LangChain (except for step <2>).
 
 Specifically, for different categories of queries identified by the discriminator, the specific implementation of each step (the design of the prompt) may vary, but the overall idea is as you see!
 
 The prompts used in this process play a crucial role. We have designed them with care, primarily employing In-Context Learning (ICL), and the entire procedure can, to some degree, be seen as a Chain of Thought (CoT). 
-
 
 
 
